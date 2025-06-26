@@ -11,16 +11,37 @@
 - 대상: 백엔드 입문~초중급 학습자
 - 주요 기술스택: Java, Spring Boot, MySQL, Gradle, Git, VS Code 등
 
+## 🧭 목차 개요
+
+| 구분 | 주제 |
+|------|------|
+| 📁 Git | Git 사용법, 버전 관리 |
+| ☕ Java 프로그래밍 기초 | 자바 기본 문법, 제어문, 자료형 |
+| 🏛️ 관계형 데이터베이스 | SQL, MySQL, 모델링 |
+| 🧱 객체지향 프로그래밍 | 클래스, 상속, 다형성, 캡슐화 |
+| 🌐 Front-End Programming | HTML, CSS, JS 기본 |
+| 🚀 Back-End Programming | Spring Boot, REST API, JPA |
+| ⚙️ DevOps | 빌드 도구, 배포, 도커 등 |
+
 ---
 
-## 📆 주차별 강의 자료
+---
 
-| 주차 | 주제 | 링크 |
-|------|------|------|
-| 1주차 | Java 기초 & OOP | [바로가기](week01/java-basics.md) |
-| 2주차 | Spring 입문 | [바로가기](week02/spring-boot.md) |
-| 3주차 | REST API 설계 | 준비중 |
-| 4주차 | JPA + H2 | 준비중 |
+## 📚 학습 주차별 링크
+### ✅ git
+
+- [01_git기초](git/git-intro.md)
+### ✅ Java 기초
+
+- [01_자바시작](java/java-intro.md)
+- [02_자바기본](java/java-basic.md)
+
+### ✅ Spring Boot
+
+- [스프링 부트 시작](week02/spring-boot.md) _(예시 파일)_
+
+---
+
 
 > 🔄 교안은 계속 업데이트됩니다.
 

@@ -5,11 +5,17 @@ theme:
   logo: 'images/logo.png'    # 나중에 로고 이미지를 넣고 싶다면 사용
 nav:
   - 홈: index.md
-  - java :
+  - git : 
+  - 자바 프로그래밍 기초 :
       - 01_자바시작 : week01/java-intro.md
       - 02_자바기본 : week01/java-basic.md
-  #- 2주차:
-      #- 스프링 부트 시작: week02/spring-boot.md
+  - 관계형 데이터베이스 : 
+  - 객체지향 프로그래밍 : 
+  - Front-End Programming :
+  - Back-end Programming : 
+   #- 스프링 부트 시작: week02/spring-boot.md
+  - DevOps :
+     
 
 markdown_extensions:
   - admonition            # ⚠️ 알림 블록 지원
