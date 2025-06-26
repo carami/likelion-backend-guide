@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write   # ✅ 이게 있어야 GITHUB_TOKEN으로 푸시 가능함
+  contents: write   # ✅ GITHUB_TOKEN이 push 권한을 갖도록 설정
 
 jobs:
   deploy:
@@ -28,12 +28,12 @@ jobs:
       - name: Build site
         run: mkdocs build
 
-      - name: Deploy to gh-pages
+      - name: Deploy to gh-pages (✅ GITHUB_TOKEN 사용)
         run: |
           git config --global user.name "carami"
           git config --global user.email "carami@nate.com"
-          
+
           ghp-import -n -f site
 
-          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git push origin gh-pages --force
