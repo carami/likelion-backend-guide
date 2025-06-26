@@ -25,10 +25,18 @@ jobs:
       - name: Build site
         run: mkdocs build
 
-      - name: Deploy to gh-pages
+      - name: Deploy to gh-pages (with GITHUB_TOKEN)
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --global user.name "carami"
           git config --global user.email "carami@nate.com"
-          ghp-import -n -p -f site
+
+          # ghp-import으로 gh-pages 브랜치 생성
+          ghp-import -n -f site
+
+          # 인증된 URL 구성
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+
+          # 푸시
+          git push origin gh-pages --force
