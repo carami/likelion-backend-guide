@@ -1,4 +1,4 @@
-name: Deploy MkDocs to GitHub Pages
+name: Deploy MkDocs (private repo 대응)
 
 on:
   push:
@@ -8,8 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
     steps:
       - name: Checkout Repository
@@ -21,12 +19,16 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install mkdocs-material
-
-      - name: Setup Git Identity
         run: |
-          git config --global user.email "carami@nate.com"
-          git config --global user.name "carami"
+          pip install mkdocs-material ghp-import
 
-      - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
+      - name: Build site
+        run: mkdocs build
+
+      - name: Deploy to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git config --global user.name "carami"
+          git config --global user.email "carami@nate.com"
+          ghp-import -n -p -f site

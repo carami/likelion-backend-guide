@@ -6,10 +6,10 @@ theme:
 nav:
   - 홈: index.md
   - 1주차:
-      - 자바 기초: week01/java-basics.md
-      - 스프링 소개: week01/spring-intro.md
+      #- 자바 기초: week01/java-basics.md
+      #- 스프링 소개: week01/spring-intro.md
   - 2주차:
-      - 스프링 부트 시작: week02/spring-boot.md
+      #- 스프링 부트 시작: week02/spring-boot.md
 
 markdown_extensions:
   - admonition            # ⚠️ 알림 블록 지원
