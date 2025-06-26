@@ -5,9 +5,9 @@ theme:
   logo: 'images/logo.png'    # 나중에 로고 이미지를 넣고 싶다면 사용
 nav:
   - 홈: index.md
-  - 1주차:
-      - 자바 기초: week01/java-basics.md
-      #- 스프링 소개: week01/spring-intro.md
+  - java :
+      - 01_자바시작 : week01/java-intro.md
+      - 02_자바기본 : week01/java-basic.md
   #- 2주차:
       #- 스프링 부트 시작: week02/spring-boot.md
 
