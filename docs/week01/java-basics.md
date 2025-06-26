@@ -8,109 +8,11 @@ marp: true
 
 ---
 
-# JAVA언어의 특징과 JDK 설치
+# Hello
 
 ---
 
-# 자바 프로그래밍을 공부하는 이유?
-
-- 기업에서 서버 프로그래밍시 가장 많이 사용하는 언어
-
----
-
-# 자바 언어의 특징
-
-- 객체지향 언어
-- 자바 언어는 느리지만, 버전업 되면서 다른 언어들의 장점들을 흡수하고 있다. (모던 자바)
-  - 람다(Lambda) : 함수형 프로그래밍
-  - Stream API : 람다 표현식과 메서드 참조 등의 기능과 결합해서 매우 복잡하고 어려운 데이터 처리 작업을 쉽게 조회하고 필터링하고 변환하고 처리할 수 있도록 한다.
-  - 병렬 프로그래밍 : 여러개의 CPU코어에서 작업을 배분해서 동시에 작업을 수행한다.
-
----
-
-# 자바 프로그램 작성과 실행
-
-- JDK(Java Development Kit)이라는 프로그램을 다운로드하고 설치해야한다.
-- 여러 종류의 JDK가 존재한다. openjdk, Oracle JDK, Azul Julu JDK, Amazon Corretto OpenJDK, Adoptium Temurin 등
-- 이클립스 재단(The Eclipse Foundation)의 어댑티움(Adoptium) 프로젝트가 ‘이클립스 테무린(Eclipse Temurin) 자바 SE 바이너리’의 첫 번째 릴리즈를 출시했다. 이는 인텔 64비트 프로세서 기반 윈도우, 리눅스, 맥OS용 자바 SE 8, 자바 SE 11, 자바 SE 16의 최신 버전을 다루는 오픈JDK(OpenJDK)의 ‘프로덕션 레디(production-ready)’ 빌드다.
-
----
-
-# Git 설치
-
-- Git 설치 후 다음의 내용을 설정한다.
-
-```
-  git config --global user.name "이름"
-  git config --global user.email 이메일
-  git config --global core.autocrlf true
-```
-
----
-
-# JDK 21 설치
-
-- 초보자가 공부할 때는 JDK 8도 충분. 서비스 업체들의 경우 11이상을 사용하는 경우가 많다.
-- JDK 21을 고려하는 경우
-  - Java 17이 2023년 9월 출시.
-  - 10부터는 6개월마다 출시. LTS(Long Term Support)버전은 3년마다 출시.
-  - JDK8 LTS가 JDK11 LTS보다 유지보수 기간이 더 길다.
-  - JDK 17 vs JDK 21 - JDK 21의 유지보수 기간이 더 길다.
-- https://adoptium.net/
-
----
-
-![height:500](images/2024-03-05-15-31-18.png)
-
----
-
-# JDK 21 설치
-
-- 윈도우 사용자는 msi파일을, 맥 사용자는 pkg파일을 다운로드한다.
-- msi파일 또는 pkg파일을 실행하여 설치한다.
-
----
-
-# JDK 21 설정/설치 - Mac사용자
-
-- 터미널에서 `echo $0` 이라고 명령한다.
-- zsh라고 나올 경우
-  `code ~/.zshrc` 명령을 수행한다.
-- bash라고 나올 경우
-  `code ~/.bashrc` 명령을 수행한다.
-- 파일을 열었으면 마지막 줄에 다음을 추가한다.
-
-```
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
-export PATH=$PATH:$JAVA_HOME/bin
-
-```
-
----
-
-# JDK 21 설정/설치 - Mac사용자
-
-- 터미널을 종료하고 재시작한다. 다음과 같이 명령한다.
-
-```
-java --version
-javac -version
-```
-
----
-
-# JDK 21 설치 - 윈도우 사용자
-
-구글에서 "Windows JAVA_HOME PATH 환경변수 설정" 이라고 검색해보자.
-
-https://vmpo.tistory.com/6
-
----
-
-# 자바 프로그램 작성과 실행
-
-- 터미널에서 특정 디렉토리로 이동한다. (소스가 저장될 디렉토리)
-- `code Hello.java` 을 실행한 후 아래와 같이 저장한다.
+# Hello.java 파일 분석하기
 
 ```
 public class Hello{
@@ -123,14 +25,77 @@ public class Hello{
 
 ---
 
-# 자바 프로그램 작성과 실행
+# Hello.java의 3가지 중요한 부분
 
-- java 컴파일러 javac명령으로 hello.java를 컴파일 한다.
+1. 클래스 선언
+
+```
+public class Hello{
+.......
+}
+```
+
+- public class로 정의된 Hello 클래스
+- public class의 클래스 이름과 파일이름은 같아야 한다. (중요! 대소문자 구분함): Hello.java
+
+---
+
+# Hello.java의 3가지 중요한 부분
+
+2. 메소드 선언
+
+```
+   public static void main(String[] args){
+        .......
+    }
+```
+
+- 클래스는 필드(Field)와 메소드(Method)를 가질 수 있다.
+- 프로그램이 실행하려면 반드시 가져야 하는 main메소드
+- Java로 만든 프로그램이 실행되려면 위의 코드(code)를 가지고 있어야 한다. 프로그램 시작점이라고도 말한다.
+
+---
+
+# Hello.java의 3가지 중요한 부분
+
+3. System클래스의 out. out이 가지고 있는 println()메소드를 이용해 출력하기
+
+```
+    System.out.println("Hello");
+```
+
+- System.out은 System이 가지고 있는 out이라는 의미이다.
+- out.println은 out이 가지고 있는 println이라는 의미이다.
+- println뒤에 괄호가 붙어 있는데, 이때 println메소드라고 말한다.
+- out은 괄호가 붙지 않았는데, 이때 out필드라고 말한다.
+- out이 가지고 있는 println메소드의 역할은 괄호안의 내용을 화면에 출력한다. 즉 "Hello"가 출력되게 된다. (이때 큰따옴표 안의 내용이 출력된다.), 큰따옴표까지 포함해서 문자열(String)이라고 말한다.
+
+---
+
+# 컴파일하기
+
+- 컴파일을 하려면 반드시 javac라는 프로그램이 필요하다. javac는 자바 컴파일러(Compiler)를 말한다.
   `javac Hello.java`
-- 컴파일이 성공하면 오류메시지가 없이 `Hello.class`파일이 생성된다.
-- `ls -la` 명령으로 파일이 생성되었는지 확인한다.
-- JVM(자바 가상 머신)으로 `Hello.class`를 실행한다. java명령이 JVM을 의미한다. 이 때 확장자는 입력하지 않는다.
+- 터미널에서 위의 명령을 입력하면 Hello.java라는 파일을 읽어들여서 컴파일을 하게 된다.
+- 컴파일을 성공하면 Hello.class파일이 생성되고, 컴파일이 실패하면 오류메시지가 보여진다.
+- Hello.class파일을 `바이트(byte) 파일`이라고 말한다. Hello.java는 에디터로 열어보면, 사람이 알아들을 수 있는 말로 되어 있지만, Hello.class는 사람이 알아볼 수 없는 말로 되어 있다.
+
+---
+
+# JVM으로 실행하기
+
+- 자바로 작성된 프로그램이라는 것은 컴파일된 클래스. 즉 바이트 파일을 의미한다.
+- 작성된 바이트 파일을 실행하려면 JVM(Java Virtual Machine)이 필요하다. 이 JVM역할을 수행하는 것이 java명령이다.
+- hwp파일을 읽어들이려면 아래한글 워드프로세서가 필요하고, psd파일을 읽어들이려면 포토샵 프로그램이 필요한 것과 같은 원리이다.
+- JVM은 바이트 코드를 읽어들여 실행된다. 바이트 코드를 읽어들여 실행하기 위해서는 다음과 같은 명령을 실행한다. 이때 확장자 이름은 입력하면 안된다.
   `java Hello`
+- java프로그램은 Hello클래스를 한 줄 읽고 해석 하고 실행하고, 한 줄 읽고 실행하고를 반복하면서 실행한다. 이렇게 한줄 한줄 읽어들이고 해석하면서 실행하는 방식을 인터프리터(interpreter)방식이라고 한다.
+
+---
+
+# 연습
+
+- 본인의 이름, 성별, 이메일주소를 출력하는 클래스를 작성하고, 컴파일하고, 실행한다.
 
 ---
 
