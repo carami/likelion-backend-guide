@@ -1,1 +1,27 @@
-'site_dir: site' 
+site_name: '백엔드 부트캠프'
+site_description: 'Markdown 기반의 깔끔한 강의 웹페이지'
+theme:
+  name: material
+  logo: 'images/logo.png'    # 나중에 로고 이미지를 넣고 싶다면 사용
+nav:
+  - 홈: index.md
+  - 1주차:
+      - 자바 기초: week01/java-basics.md
+      - 스프링 소개: week01/spring-intro.md
+  - 2주차:
+      - 스프링 부트 시작: week02/spring-boot.md
+
+markdown_extensions:
+  - admonition            # ⚠️ 알림 블록 지원
+  - codehilite           # 코드 하이라이팅
+  - toc:
+      permalink: true    # 제목 옆에 링크 아이콘 추가
+
+extra_css:
+  - 'stylesheets/custom.css'  # 스타일 커스텀 시 사용할 수 있음
+extra_javascript:
+  - 'javascripts/custom.js'   # 자바스크립트 커스터마이즈 시 사용
+
+repo_url: 'https://github.com/carami/likelion-backend-guide'
+repo_name: 'GitHub'
+edit_uri: 'edit/main/docs'
