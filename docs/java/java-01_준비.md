@@ -1,7 +1,3 @@
----
-marp: true
----
-
 # 즐거운 자바
 
 ## 강경미(carami@nate.com), 김성박 (urstory@gmail.com)

@@ -12,8 +12,8 @@ nav:
 - Git:
   - Git 01: git/git_01.md
 - Java:
-  - Java-01: java/java-01.md
-  - Java-02: java/java-02.md
+  - Java-01 준비: java/java-01_준비.md
+  - Java-02 소개: java/java-02_소개.md
 repo_name: GitHub
 repo_url: https://github.com/carami/likelion-backend-guide
 site_description: Markdown 기반의 깔끔한 강의 웹페이지
