@@ -1,98 +1,140 @@
-# 즐거운 자바
-
-## 강경미(carami@nate.com), 김성박 (urstory@gmail.com)
-
----
-
-# Hello
+물론이죠! 😄 아래 내용을 한 번에 복사할 수 있도록 마크다운 형식으로 제공해드릴게요.
+👉 이 내용을 `hello-java.md` 등으로 저장하시면 MkDocs에 바로 활용 가능합니다.
 
 ---
 
-# Hello.java 파일 분석하기
+````markdown
+# 🎉 즐거운 자바
 
-```
-public class Hello{
-    public static void main(String[] args){
+## 👩‍🏫 강경미 (carami@nate.com), 👨‍🏫 김성박 (urstory@gmail.com)
+
+---
+
+# 👋 Hello
+
+간단한 자바 프로그램을 작성해보며 구조를 살펴봅시다.
+
+---
+
+# 🔍 Hello.java 파일 분석하기
+
+```java
+public class Hello {
+    public static void main(String[] args) {
         System.out.println("Hello");
     }
-
 }
-```
+````
 
 ---
 
-# Hello.java의 3가지 중요한 부분
+# 🧱 Hello.java의 3가지 중요한 부분
 
-1. 클래스 선언
+## ① 클래스 선언
 
-```
-public class Hello{
-.......
+```java
+public class Hello {
+    ...
 }
 ```
 
-- public class로 정의된 Hello 클래스
-- public class의 클래스 이름과 파일이름은 같아야 한다. (중요! 대소문자 구분함): Hello.java
+* `public class`로 선언된 `Hello` 클래스
+* **클래스 이름과 파일 이름은 반드시 같아야 합니다.**
+  예: `Hello.java` (대소문자 구분!)
 
 ---
 
-# Hello.java의 3가지 중요한 부분
+## ② 메서드 선언
 
-2. 메소드 선언
-
+```java
+public static void main(String[] args) {
+    ...
+}
 ```
-   public static void main(String[] args){
-        .......
+
+* 클래스는 \*\*필드(Field)\*\*와 \*\*메서드(Method)\*\*를 가질 수 있습니다.
+* 위 코드는 **프로그램의 시작점**인 `main` 메서드입니다.
+* Java 프로그램은 반드시 이 메서드를 포함해야 실행됩니다.
+
+---
+
+## ③ System.out.println()
+
+```java
+System.out.println("Hello");
+```
+
+* `System` 클래스가 가진 **out 필드**를 통해
+* `println()` 메서드를 호출 → 화면에 출력!
+* `"Hello"`는 문자열(String)이며, 큰따옴표까지 포함된 텍스트입니다.
+
+📌 구분:
+
+| 요소          | 의미        |
+| ----------- | --------- |
+| `System`    | 자바 내장 클래스 |
+| `out`       | 출력 스트림 필드 |
+| `println()` | 출력 메서드    |
+
+---
+
+# ⚙️ 컴파일 하기
+
+```bash
+javac Hello.java
+```
+
+* `javac`는 Java Compiler를 의미합니다.
+* 컴파일이 성공하면 `Hello.class`라는 **바이트 코드 파일**이 생성됩니다.
+* 컴파일 실패 시 오류 메시지가 출력됩니다.
+* `Hello.class`는 사람이 보기 어려운 기계어 수준의 코드입니다.
+
+---
+
+# 🚀 JVM으로 실행하기
+
+```bash
+java Hello
+```
+
+* `java` 명령은 JVM(Java Virtual Machine)을 실행합니다.
+* JVM은 `.class` 바이트 코드를 한 줄씩 읽고 실행합니다.
+  👉 **인터프리터 방식**이라고 합니다.
+* `java Hello` 명령에서는 `.class` 확장자를 **입력하지 않습니다.**
+
+📝 예시:
+
+| 명령어                | 설명                 |
+| ------------------ | ------------------ |
+| `javac Hello.java` | 소스 파일을 바이트 코드로 컴파일 |
+| `java Hello`       | 컴파일된 클래스 실행        |
+
+---
+
+# ✏️ 연습 문제
+
+본인의 정보를 출력하는 클래스를 만들어보세요.
+
+예시:
+
+```java
+public class MyInfo {
+    public static void main(String[] args) {
+        System.out.println("이름: 홍길동");
+        System.out.println("성별: 남성");
+        System.out.println("이메일: hong@gmail.com");
     }
+}
 ```
 
-- 클래스는 필드(Field)와 메소드(Method)를 가질 수 있다.
-- 프로그램이 실행하려면 반드시 가져야 하는 main메소드
-- Java로 만든 프로그램이 실행되려면 위의 코드(code)를 가지고 있어야 한다. 프로그램 시작점이라고도 말한다.
+> 직접 작성하고 `javac`로 컴파일 → `java MyInfo`로 실행해보세요! 😊
 
 ---
 
-# Hello.java의 3가지 중요한 부분
+# 🙏 감사합니다!
 
-3. System클래스의 out. out이 가지고 있는 println()메소드를 이용해 출력하기
+다음 강의에서는 변수와 데이터 타입에 대해 알아볼 예정입니다.
 
 ```
-    System.out.println("Hello");
-```
-
-- System.out은 System이 가지고 있는 out이라는 의미이다.
-- out.println은 out이 가지고 있는 println이라는 의미이다.
-- println뒤에 괄호가 붙어 있는데, 이때 println메소드라고 말한다.
-- out은 괄호가 붙지 않았는데, 이때 out필드라고 말한다.
-- out이 가지고 있는 println메소드의 역할은 괄호안의 내용을 화면에 출력한다. 즉 "Hello"가 출력되게 된다. (이때 큰따옴표 안의 내용이 출력된다.), 큰따옴표까지 포함해서 문자열(String)이라고 말한다.
 
 ---
-
-# 컴파일하기
-
-- 컴파일을 하려면 반드시 javac라는 프로그램이 필요하다. javac는 자바 컴파일러(Compiler)를 말한다.
-  `javac Hello.java`
-- 터미널에서 위의 명령을 입력하면 Hello.java라는 파일을 읽어들여서 컴파일을 하게 된다.
-- 컴파일을 성공하면 Hello.class파일이 생성되고, 컴파일이 실패하면 오류메시지가 보여진다.
-- Hello.class파일을 `바이트(byte) 파일`이라고 말한다. Hello.java는 에디터로 열어보면, 사람이 알아들을 수 있는 말로 되어 있지만, Hello.class는 사람이 알아볼 수 없는 말로 되어 있다.
-
----
-
-# JVM으로 실행하기
-
-- 자바로 작성된 프로그램이라는 것은 컴파일된 클래스. 즉 바이트 파일을 의미한다.
-- 작성된 바이트 파일을 실행하려면 JVM(Java Virtual Machine)이 필요하다. 이 JVM역할을 수행하는 것이 java명령이다.
-- hwp파일을 읽어들이려면 아래한글 워드프로세서가 필요하고, psd파일을 읽어들이려면 포토샵 프로그램이 필요한 것과 같은 원리이다.
-- JVM은 바이트 코드를 읽어들여 실행된다. 바이트 코드를 읽어들여 실행하기 위해서는 다음과 같은 명령을 실행한다. 이때 확장자 이름은 입력하면 안된다.
-  `java Hello`
-- java프로그램은 Hello클래스를 한 줄 읽고 해석 하고 실행하고, 한 줄 읽고 실행하고를 반복하면서 실행한다. 이렇게 한줄 한줄 읽어들이고 해석하면서 실행하는 방식을 인터프리터(interpreter)방식이라고 한다.
-
----
-
-# 연습
-
-- 본인의 이름, 성별, 이메일주소를 출력하는 클래스를 작성하고, 컴파일하고, 실행한다.
-
----
-
-# 감사합니다.
