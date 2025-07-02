@@ -11,6 +11,10 @@ markdown_extensions:
 nav:
 - 홈: index.md
 - 교안:
+  - Faq: ./faq.md
+  - Checklist:
+    - Week01: checklist/week01.md
+    - Week02: checklist/week02.md
   - Git:
     - Git 01: git/git_01.md
   - Java:
