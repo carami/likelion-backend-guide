@@ -30,11 +30,11 @@
 ## 📚 학습 주차별 링크
 ### ✅ git
 
-- [01_git기초](git/git-intro.md)
+- [01_git기초](git/git_01.md)
 ### ✅ Java 기초
 
-- [01_자바시작](java/java-intro.md)
-- [02_자바기본](java/java-basic.md)
+- [01_자바시작](java/java-01.md)
+- [02_자바기본](java/java-02.md)
 
 ### ✅ Spring Boot
 
