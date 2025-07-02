@@ -4,8 +4,10 @@ import yaml
 def generate_nav(root_dir="docs"):
     교안_nav = []
 
+    EXCLUDE_FILES = ["faq.md", "index.md"]
+
     for root, dirs, files in os.walk(root_dir):
-        md_files = [f for f in files if f.endswith(".md") and f != "index.md"]
+        md_files = [f for f in files if f.endswith(".md") and f not in EXCLUDE_FILES]
         if not md_files:
             continue
 
