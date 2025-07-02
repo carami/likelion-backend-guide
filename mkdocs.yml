@@ -1,8 +1,8 @@
-site_name: '백엔드 부트캠프'
+site_name: '멋쟁이 사자처럼 백엔드 부트캠프'
 site_description: 'Markdown 기반의 깔끔한 강의 웹페이지'
 theme:
   name: material
-  logo: 'images/logo.png'    # 나중에 로고 이미지를 넣고 싶다면 사용
+  logo: 'likelion_kor_logo_renew.svg'    # 나중에 로고 이미지를 넣고 싶다면 사용
 nav:
   - 홈: index.md
   - git : []
