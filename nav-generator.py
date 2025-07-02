@@ -1,10 +1,7 @@
 import os
 import yaml
 
-# 제외할 단일 파일
 EXCLUDE_FILES = ["index.md", "faq.md"]
-
-# 교안 자동 포함에서 제외할 디렉토리
 EXCLUDE_DIRS = ["checklist"]
 
 def generate_curriculum_nav(root_dir="docs"):
@@ -45,21 +42,23 @@ def update_mkdocs_yml():
     교안_nav = generate_curriculum_nav()
     checklist_nav = generate_checklist_nav()
 
+    # 1. 기존 설정 전체 로딩
     with open("mkdocs.yml", "r", encoding="utf-8") as f:
         config = yaml.safe_load(f)
 
+    # 2. nav만 덮어쓰기
     fixed_nav_top = [{"홈": "index.md"}]
     fixed_nav_bottom = [
         {"체크리스트": checklist_nav},
         {"FAQ": "faq.md"}
     ]
-
     config["nav"] = fixed_nav_top + [{"교안": 교안_nav}] + fixed_nav_bottom
 
+    # 3. 전체 설정 다시 저장
     with open("mkdocs.yml", "w", encoding="utf-8") as f:
-        yaml.dump(config, f, allow_unicode=True)
+        yaml.dump(config, f, allow_unicode=True, sort_keys=False)
 
-    print("✅ mkdocs.yml nav 항목이 완성되었습니다.")
+    print("✅ mkdocs.yml nav 항목이 안전하게 갱신되었습니다.")
 
 if __name__ == "__main__":
     update_mkdocs_yml()

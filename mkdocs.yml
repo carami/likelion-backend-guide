@@ -1,3 +1,6 @@
+theme:
+  logo: likelion_kor_logo_renew.svg
+  name: material
 edit_uri: edit/main/docs
 extra_css:
 - stylesheets/custom.css
@@ -24,6 +27,3 @@ repo_name: GitHub
 repo_url: https://github.com/carami/likelion-backend-guide
 site_description: Markdown 기반의 깔끔한 강의 웹페이지
 site_name: 멋쟁이 사자처럼 백엔드 부트캠프
-theme:
-  logo: likelion_kor_logo_renew.svg
-  name: material
