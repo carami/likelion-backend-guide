@@ -1,0 +1,1053 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Markdown 기반의 깔끔한 강의 웹페이지">
+      
+      
+      
+      
+        <link rel="prev" href="../java-01_%EC%A4%80%EB%B9%84/">
+      
+      
+        <link rel="next" href="../java-03_intellj%EC%84%A4%EC%B9%98%EB%B0%8F%EC%8B%A4%ED%96%89/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Java-02 Main - 백엔드 부트캠프</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="백엔드 부트캠프" class="md-header__button md-logo" aria-label="백엔드 부트캠프" data-md-component="logo">
+      
+  <img src="../../images/likelion_kor_logo_renew.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            백엔드 부트캠프
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Java-02 Main
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/carami/likelion-backend-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="백엔드 부트캠프" class="md-nav__button md-logo" aria-label="백엔드 부트캠프" data-md-component="logo">
+      
+  <img src="../../images/likelion_kor_logo_renew.svg" alt="logo">
+
+    </a>
+    백엔드 부트캠프
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/carami/likelion-backend-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    홈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    교안
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            교안
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/git_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java-01_%EC%A4%80%EB%B9%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java-01 준비
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Java-02 Main
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java-02 Main
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caraminatecom-urstorygmailcom" class="md-nav__link">
+    <span class="md-ellipsis">
+      강경미(carami@nate.com), 김성박 (urstory@gmail.com)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java-03_intellj%EC%84%A4%EC%B9%98%EB%B0%8F%EC%8B%A4%ED%96%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java-03 Intellj설치및실행
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java-04_%EC%A3%BC%EC%84%9D%EB%AC%B8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java-04 주석문
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    체크리스트
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            체크리스트
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/week01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ✅ 1주차 체크리스트 – Git &amp; Java 기초
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/week02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Week02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caraminatecom-urstorygmailcom" class="md-nav__link">
+    <span class="md-ellipsis">
+      강경미(carami@nate.com), 김성박 (urstory@gmail.com)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">즐거운 자바<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="caraminatecom-urstorygmailcom">강경미(carami@nate.com), 김성박 (urstory@gmail.com)<a class="headerlink" href="#caraminatecom-urstorygmailcom" title="Permanent link">&para;</a></h2>
+<hr />
+<h1 id="hello">Hello<a class="headerlink" href="#hello" title="Permanent link">&para;</a></h1>
+<hr />
+<h1 id="hellojava">Hello.java 파일 분석하기<a class="headerlink" href="#hellojava" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span><code>public class Hello{
+    public static void main(String[] args){
+        System.out.println(&quot;Hello&quot;);
+    }
+
+}
+</code></pre></div>
+
+<hr />
+<h1 id="hello_1">🎉 즐거운 자바: Hello 프로그램 이해하기<a class="headerlink" href="#hello_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">👩‍🏫 강사 소개<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>강경미</strong> (carami@nate.com)<br />
+<strong>김성박</strong> (urstory@gmail.com)</p>
+<hr />
+<h2 id="_3">🗂️ 강의 개요<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>주제:</strong> 자바 언어의 기본 구조 이해 및 Hello.java 실행 실습  </li>
+<li><strong>목표:</strong> 자바 프로그램의 구조(클래스, 메서드, 출력문)를 이해하고 작성/실행할 수 있다.  </li>
+<li><strong>시간:</strong> 약 1시간  </li>
+<li><strong>준비물:</strong></li>
+<li>VS Code 또는 IntelliJ</li>
+<li>JDK 설치 완료 (버전 11 이상 추천)</li>
+</ul>
+<hr />
+<h2 id="hellojava_1">👋 Hello.java 파일 분석<a class="headerlink" href="#hellojava_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hello</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="hellojava-3">🧱 Hello.java의 3가지 핵심 요소<a class="headerlink" href="#hellojava-3" title="Permanent link">&para;</a></h2>
+<h3 id="1">① 클래스 선언<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hello</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><code>public class</code>로 선언된 <strong>Hello</strong> 클래스</li>
+<li><strong>클래스 이름 = 파일 이름</strong>이어야 함 → <code>Hello.java</code></li>
+<li>자바는 <strong>대소문자 구분</strong></li>
+</ul>
+<hr />
+<h3 id="2-main">② main 메서드<a class="headerlink" href="#2-main" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>자바 프로그램의 <strong>시작점</strong></li>
+<li>모든 실행 가능한 자바 프로그램은 이 메서드를 포함해야 함</li>
+<li><code>String[] args</code>는 <strong>명령줄 인자</strong>를 받을 수 있는 배열</li>
+</ul>
+<hr />
+<h3 id="3-systemoutprintln">③ System.out.println()<a class="headerlink" href="#3-systemoutprintln" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>구성 요소</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>System</code></td>
+<td>자바 내장 클래스</td>
+</tr>
+<tr>
+<td><code>out</code></td>
+<td>출력 스트림 (필드)</td>
+</tr>
+<tr>
+<td><code>println()</code></td>
+<td>출력 함수 (메서드)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>System.out</code>은 <strong>출력 객체</strong></li>
+<li><code>println()</code>은 <strong>출력 메서드</strong></li>
+<li>괄호 안의 <code>"Hello"</code>는 문자열(String) → 그대로 출력됨</li>
+</ul>
+<hr />
+<h2 id="_4">⚙️ 컴파일하기<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>javac<span class="w"> </span>Hello.java
+</code></pre></div>
+
+<ul>
+<li><code>javac</code>는 자바 <strong>컴파일러</strong></li>
+<li><code>.java</code> 파일을 <code>.class</code> 파일로 <strong>변환</strong></li>
+<li>컴파일에 성공하면 <code>Hello.class</code> 파일 생성</li>
+</ul>
+<hr />
+<h2 id="jvm">🚀 JVM으로 실행하기<a class="headerlink" href="#jvm" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>java<span class="w"> </span>Hello
+</code></pre></div>
+
+<ul>
+<li><code>java</code> 명령어는 JVM(Java Virtual Machine)을 실행</li>
+<li><code>.class</code> 파일을 <strong>한 줄씩 해석하며 실행</strong> → <strong>인터프리터 방식</strong></li>
+<li>확장자 <code>.class</code>는 <strong>입력하지 않음</strong></li>
+</ul>
+<hr />
+<h2 id="_5">🧪 연습 문제<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyInfo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;이름: 홍길동&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;성별: 남성&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;이메일: hong@example.com&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>직접 작성하고 컴파일 &amp; 실행:<br />
+<code>javac MyInfo.java</code><br />
+<code>java MyInfo</code></li>
+</ul>
+<hr />
+<h2 id="_6">✅ 학습 체크리스트<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>확인</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Hello.java</code> 코드 구조를 이해했다</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td>클래스 이름과 파일명이 같아야 함을 기억했다</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td>main 메서드가 자바 프로그램의 시작점임을 이해했다</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td>println()의 역할과 출력 방식에 대해 이해했다</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td>컴파일과 실행 명령어 차이를 숙지했다</td>
+<td>⬜</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">💡 퀴즈<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ol>
+<li>자바 프로그램의 시작 메서드는?</li>
+<li>a) run  </li>
+<li>b) start  </li>
+<li>c) main  </li>
+<li>
+<p>d) execute  </p>
+</li>
+<li>
+<p><code>System.out.println()</code>에서 <code>println</code>은 무엇인가?</p>
+</li>
+<li>a) 클래스  </li>
+<li>b) 필드  </li>
+<li>c) 메서드  </li>
+<li>
+<p>d) 상수  </p>
+</li>
+<li>
+<p>자바 컴파일러 명령어는?</p>
+</li>
+<li>a) java  </li>
+<li>b) execute  </li>
+<li>c) javac  </li>
+<li>d) runjava</li>
+</ol>
+<details>
+<summary>정답 보기</summary>
+
+> 1️⃣ c) main  
+> 2️⃣ c) 메서드  
+> 3️⃣ c) javac
+
+</details>
+
+<hr />
+<h2 id="_8">🔁 복습 질문<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li>클래스 이름과 파일 이름은 어떤 규칙을 따라야 하나요?</li>
+<li>main 메서드는 어떤 역할을 하나요?</li>
+<li>JVM과 javac는 각각 어떤 기능을 하나요?</li>
+<li>자바에서 문자열을 출력하려면 어떤 메서드를 사용하나요?</li>
+</ul>
+<hr />
+<h2 id="_9">🙏 마무리<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>수고 많으셨습니다! 🎉<br />
+다음 시간에는 <strong>변수와 자료형</strong>에 대해 배워볼 예정입니다.<br />
+궁금한 점이 있으면 언제든지 질문하세요 😊</p>
+<h1 id="hellojava-3_1">Hello.java의 3가지 중요한 부분<a class="headerlink" href="#hellojava-3_1" title="Permanent link">&para;</a></h1>
+<ol>
+<li>클래스 선언</li>
+</ol>
+<div class="codehilite"><pre><span></span><code>public class Hello{
+.......
+}
+</code></pre></div>
+
+<ul>
+<li>public class로 정의된 Hello 클래스</li>
+<li>public class의 클래스 이름과 파일이름은 같아야 한다. (중요! 대소문자 구분함): Hello.java</li>
+</ul>
+<hr />
+<h1 id="hellojava-3_2">Hello.java의 3가지 중요한 부분<a class="headerlink" href="#hellojava-3_2" title="Permanent link">&para;</a></h1>
+<ol>
+<li>메소드 선언</li>
+</ol>
+<div class="codehilite"><pre><span></span><code>   public static void main(String[] args){
+        .......
+    }
+</code></pre></div>
+
+<ul>
+<li>클래스는 필드(Field)와 메소드(Method)를 가질 수 있다.</li>
+<li>프로그램이 실행하려면 반드시 가져야 하는 main메소드</li>
+<li>Java로 만든 프로그램이 실행되려면 위의 코드(code)를 가지고 있어야 한다. 프로그램 시작점이라고도 말한다.</li>
+</ul>
+<hr />
+<h1 id="hellojava-3_3">Hello.java의 3가지 중요한 부분<a class="headerlink" href="#hellojava-3_3" title="Permanent link">&para;</a></h1>
+<ol>
+<li>System클래스의 out. out이 가지고 있는 println()메소드를 이용해 출력하기</li>
+</ol>
+<div class="codehilite"><pre><span></span><code>    System.out.println(&quot;Hello&quot;);
+</code></pre></div>
+
+<ul>
+<li>System.out은 System이 가지고 있는 out이라는 의미이다.</li>
+<li>out.println은 out이 가지고 있는 println이라는 의미이다.</li>
+<li>println뒤에 괄호가 붙어 있는데, 이때 println메소드라고 말한다.</li>
+<li>out은 괄호가 붙지 않았는데, 이때 out필드라고 말한다.</li>
+<li>out이 가지고 있는 println메소드의 역할은 괄호안의 내용을 화면에 출력한다. 즉 "Hello"가 출력되게 된다. (이때 큰따옴표 안의 내용이 출력된다.), 큰따옴표까지 포함해서 문자열(String)이라고 말한다.</li>
+</ul>
+<hr />
+<h1 id="_10">컴파일하기<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
+<ul>
+<li>컴파일을 하려면 반드시 javac라는 프로그램이 필요하다. javac는 자바 컴파일러(Compiler)를 말한다.
+  <code>javac Hello.java</code></li>
+<li>터미널에서 위의 명령을 입력하면 Hello.java라는 파일을 읽어들여서 컴파일을 하게 된다.</li>
+<li>컴파일을 성공하면 Hello.class파일이 생성되고, 컴파일이 실패하면 오류메시지가 보여진다.</li>
+<li>Hello.class파일을 <code>바이트(byte) 파일</code>이라고 말한다. Hello.java는 에디터로 열어보면, 사람이 알아들을 수 있는 말로 되어 있지만, Hello.class는 사람이 알아볼 수 없는 말로 되어 있다.</li>
+</ul>
+<hr />
+<h1 id="jvm_1">JVM으로 실행하기<a class="headerlink" href="#jvm_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>자바로 작성된 프로그램이라는 것은 컴파일된 클래스. 즉 바이트 파일을 의미한다.</li>
+<li>작성된 바이트 파일을 실행하려면 JVM(Java Virtual Machine)이 필요하다. 이 JVM역할을 수행하는 것이 java명령이다.</li>
+<li>hwp파일을 읽어들이려면 아래한글 워드프로세서가 필요하고, psd파일을 읽어들이려면 포토샵 프로그램이 필요한 것과 같은 원리이다.</li>
+<li>JVM은 바이트 코드를 읽어들여 실행된다. 바이트 코드를 읽어들여 실행하기 위해서는 다음과 같은 명령을 실행한다. 이때 확장자 이름은 입력하면 안된다.
+  <code>java Hello</code></li>
+<li>java프로그램은 Hello클래스를 한 줄 읽고 해석 하고 실행하고, 한 줄 읽고 실행하고를 반복하면서 실행한다. 이렇게 한줄 한줄 읽어들이고 해석하면서 실행하는 방식을 인터프리터(interpreter)방식이라고 한다.</li>
+</ul>
+<hr />
+<h1 id="_11">연습<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
+<ul>
+<li>본인의 이름, 성별, 이메일주소를 출력하는 클래스를 작성하고, 컴파일하고, 실행한다.</li>
+</ul>
+<hr />
+<h1 id="_12">감사합니다.<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h1>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../javascripts/custom.js"></script>
+      
+    
+  </body>
+</html>
