@@ -18,7 +18,9 @@ nav:
     - Git 01: git/git_01.md
   - Java:
     - Java-01 준비: java/java-01_준비.md
-    - Java-02 소개: java/java-02_소개.md
+    - Java-02 Main: java/java-02_main.md
+    - Java-03 Intellj설치및실행: java/java-03_intellj설치및실행.md
+    - Java-04 주석문: java/java-04_주석문.md
 - 체크리스트:
   - checklist/week01.md
   - checklist/week02.md
