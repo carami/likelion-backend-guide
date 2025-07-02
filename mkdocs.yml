@@ -9,6 +9,11 @@ markdown_extensions:
 - toc:
     permalink: true
 nav:
+- 홈: index.md
+- FAQ: faq.md
+- 체크리스트:
+  - checklist/week01.md
+  - checklist/week02.md
 - Git:
   - Git 01: git/git_01.md
 - Java:

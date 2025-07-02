@@ -1,17 +1,17 @@
 @echo off
 echo ---------------------------------------
-echo ðŸ›   MkDocs NAV ìžë™ ìƒì„± ì‹¤í–‰ ì¤‘...
+echo ?  MkDocs NAV ÀÚµ¿ »ý¼º ½ÇÇà Áß...
 echo ---------------------------------------
 
-REM Python ìŠ¤í¬ë¦½íŠ¸ ì‹¤í–‰
+REM Python ½ºÅ©¸³Æ® ½ÇÇà
 python nav-generator.py
 
 IF %ERRORLEVEL% NEQ 0 (
-    echo âŒ ì˜¤ë¥˜ ë°œìƒ: Python ìŠ¤í¬ë¦½íŠ¸ ì‹¤í–‰ ì‹¤íŒ¨
+    echo ? ¿À·ù ¹ß»ý: Python ½ºÅ©¸³Æ® ½ÇÇà ½ÇÆÐ
     pause
     exit /b 1
 )
 
-echo âœ… nav í•­ëª©ì´ mkdocs.ymlì— ì„±ê³µì ìœ¼ë¡œ ë°˜ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
-echo ðŸ”„ mkdocs serve ë¡œ ë¡œì»¬ í™•ì¸ ê°€ëŠ¥
+echo ? nav Ç×¸ñÀÌ mkdocs.yml¿¡ ¼º°øÀûÀ¸·Î ¹Ý¿µµÇ¾ú½À´Ï´Ù.
+echo ? mkdocs serve ·Î ·ÎÄÃ È®ÀÎ °¡´É
 pause
