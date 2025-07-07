@@ -1,36 +1,10 @@
----
-marp: true
----
 
-# 즐거운 자바
-
-## 강경미(carami@nate.com), 김성박 (urstory@gmail.com)
-
----
-
-# Hello
-
----
-
-# Hello.java 파일 분석하기
-
-```
-public class Hello{
-    public static void main(String[] args){
-        System.out.println("Hello");
-    }
-
-}
-```
-
----
 # 🎉 즐거운 자바: Hello 프로그램 이해하기
 
 ## 👩‍🏫 강사 소개  
 **강경미** (carami@nate.com)  
 **김성박** (urstory@gmail.com)
 
----
 
 ## 🗂️ 강의 개요
 
@@ -182,9 +156,9 @@ public class MyInfo {
 <details>
 <summary>정답 보기</summary>
 
-> 1️⃣ c) main  
-> 2️⃣ c) 메서드  
-> 3️⃣ c) javac
+1️⃣ c) main  
+2️⃣ c) 메서드  
+3️⃣ c) javac
 
 </details>
 

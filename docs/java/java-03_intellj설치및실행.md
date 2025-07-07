@@ -169,11 +169,9 @@ public class MyInfo {
 
 <details>
 <summary>정답 보기</summary>
-
-
-> 1️⃣ c) Jetbrains  
-> 2️⃣ d) src  
-> 3️⃣ c) main()
+ 1️⃣ c) Jetbrains  
+ 2️⃣ d) src  
+ 3️⃣ c) main()
 </details>
 ---
 
