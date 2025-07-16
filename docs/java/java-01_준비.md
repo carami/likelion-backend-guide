@@ -159,18 +159,16 @@ java Hello
 ## 💡 퀴즈
 
 1. 자바를 실행하는 프로그램은?
-
-a) JVM
-b) JDK
-c) JRE
-d) IntelliJ
+   a) JVM
+   b) JDK
+   c) JRE
+   d) IntelliJ
 
 2. 자바의 특징이 아닌 것은?
-
-a) 객체지향
-b) 병렬 프로그래밍
-c) 플랫폼 의존성 큼
-d) 안정성 높음
+   a) 객체지향
+   b) 병렬 프로그래밍
+   c) 플랫폼 의존성 큼
+   d) 안정성 높음
 
 3. javac Hello.java 명령어의 역할은?
    a) 실행

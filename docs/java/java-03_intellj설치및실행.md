@@ -1,6 +1,7 @@
 # 🎉 IntelliJ로 자바 프로젝트 시작하기
 
-## 👩‍🏫 강사 소개  
+## 👩‍🏫 강사 소개
+
 **강경미** (carami@nate.com)  
 **김성박** (urstory@gmail.com)
 
@@ -8,9 +9,9 @@
 
 ## 🗂️ 강의 개요
 
-- **주제:** IntelliJ IDEA를 사용한 자바 프로젝트 생성 및 실행  
-- **목표:** IntelliJ에서 자바 프로젝트를 만들고, Hello.java를 작성하고 실행할 수 있다.  
-- **시간:** 약 1시간  
+- **주제:** IntelliJ IDEA를 사용한 자바 프로젝트 생성 및 실행
+- **목표:** IntelliJ에서 자바 프로젝트를 만들고, Hello.java를 작성하고 실행할 수 있다.
+- **시간:** 약 1시간
 - **준비물:**
   - IntelliJ IDEA 설치 (Ultimate or Community)
   - JDK 설치 완료
@@ -21,7 +22,7 @@
 ## 💻 IDE란?
 
 - **IDE (Integrated Development Environment)**: 코드 작성, 디버깅, 컴파일, 배포 등 개발을 위한 모든 도구를 통합한 환경
-- 대표 IDE: Eclipse, IntelliJ IDEA  
+- 대표 IDE: Eclipse, IntelliJ IDEA
 - 참고: [위키백과 IDE 설명](https://ko.wikipedia.org/wiki/통합_개발_환경)
 
 ---
@@ -38,7 +39,7 @@
 
 ## 🍎 Mac에서 설치
 
-- M1/M2 계열: **Apple Silicon 버전** 선택  
+- M1/M2 계열: **Apple Silicon 버전** 선택
 - Intel Mac: **Intel 버전** 선택
 - 설치 방법:
   - `.dmg` 실행 후, 좌측 아이콘을 우측 `Applications` 폴더로 드래그
@@ -61,33 +62,33 @@
 
 ## 📁 프로젝트 생성
 
-- 이름: `HappyJava`  
-- 저장 위치: 자바 프로젝트 전용 폴더를 생성해서 보관  
+- 이름: `HappyJava`
+- 저장 위치: 자바 프로젝트 전용 폴더를 생성해서 보관
 - 완료 후 Finish
 
 ---
 
 ## 🌐 한글 메뉴 설정
 
-- 첫 실행 시, 로컬라이징 안내 팝업 등장  
-- "확인" 누르면 메뉴가 **한글**로 바뀜  
+- 첫 실행 시, 로컬라이징 안내 팝업 등장
+- "확인" 누르면 메뉴가 **한글**로 바뀜
 - 영어로 쓰고 싶다면 "닫기"
 
 ---
 
 ## 📌 IntelliJ 프로젝트 구조
 
-| 폴더/파일 | 설명 |
-|-----------|------|
-| `.idea` | 프로젝트 설정 폴더 (수정 금지) |
+| 폴더/파일       | 설명                           |
+| --------------- | ------------------------------ |
+| `.idea`         | 프로젝트 설정 폴더 (수정 금지) |
 | `HappyJava.iml` | IntelliJ 설정 파일 (삭제 금지) |
-| `src` | Java 코드 작성 위치 |
+| `src`           | Java 코드 작성 위치            |
 
 ---
 
 ## ✏️ Hello.java 작성 방법
 
-1. `src` 폴더 우클릭 → 새로 만들기 → Java 클래스 선택  
+1. `src` 폴더 우클릭 → 새로 만들기 → Java 클래스 선택
 2. 이름: `Hello` 입력 (확장자 `.java`는 생략)
 
 ```java
@@ -102,7 +103,7 @@ public class Hello {
 
 ## ▶️ Hello 실행 방법
 
-1. `Hello.java` 파일 우클릭 → **실행 'Hello.main()'** 선택  
+1. `Hello.java` 파일 우클릭 → **실행 'Hello.main()'** 선택
 2. 아래쪽 콘솔에 실행 결과가 출력됨
 
 💡 IntelliJ는 자동 컴파일 + 실행을 처리함
@@ -111,21 +112,21 @@ public class Hello {
 
 ## 📂 컴파일 결과 확인
 
-- 프로젝트 루트에 `out/` 폴더 생성됨  
-- 클래스 파일 경로: `out/production/HappyJava/Hello.class`  
+- 프로젝트 루트에 `out/` 폴더 생성됨
+- 클래스 파일 경로: `out/production/HappyJava/Hello.class`
 - 이 위치에서 `.class` 파일이 JVM에 의해 실행됨
 
 ---
 
 ## ✅ 학습 체크리스트
 
-| 항목 | 완료 여부 |
-|------|------------|
-| IntelliJ 설치 및 실행을 완료했다 | ⬜ |
-| 새 자바 프로젝트(HappyJava)를 만들었다 | ⬜ |
-| Hello.java를 생성하고 편집할 수 있다 | ⬜ |
-| 실행 결과를 IDE 콘솔에서 확인했다 | ⬜ |
-| `out/` 폴더에서 클래스 파일 위치를 확인했다 | ⬜ |
+| 항목                                        | 완료 여부 |
+| ------------------------------------------- | --------- |
+| IntelliJ 설치 및 실행을 완료했다            | ⬜        |
+| 새 자바 프로젝트(HappyJava)를 만들었다      | ⬜        |
+| Hello.java를 생성하고 편집할 수 있다        | ⬜        |
+| 실행 결과를 IDE 콘솔에서 확인했다           | ⬜        |
+| `out/` 폴더에서 클래스 파일 위치를 확인했다 | ⬜        |
 
 ---
 
@@ -149,23 +150,22 @@ public class MyInfo {
 ## 💡 퀴즈
 
 1. IntelliJ IDEA는 어떤 회사에서 개발했나요?  
-   - a) Oracle  
-   - b) Google  
-   - c) Jetbrains  
-   - d) Microsoft
+   a) Oracle  
+    b) Google  
+   c) Jetbrains  
+    d) Microsoft
 
 2. 자바 파일을 작성하는 기본 폴더는?  
-   - a) root  
-   - b) out  
-   - c) .idea  
-   - d) src
+    a) root  
+   b) out  
+    c) .idea  
+    d) src
 
 3. 자바 클래스 실행 시 사용하는 기본 메서드는?  
-   - a) start()  
-   - b) begin()  
-   - c) main()  
-   - d) init()
-
+   a) start()  
+   b) begin()  
+   c) main()  
+   d) init()
 
 <details>
 <summary>정답 보기</summary>
@@ -187,6 +187,4 @@ public class MyInfo {
 ## 🙏 마무리
 
 IntelliJ에서 자바를 실행하는 방법을 배웠어요 🎉  
-다음 시간엔 **버전 관리(Git)** 또는 **자바 문법**을 이어서 배울 예정입니다.  
 궁금한 점은 언제든 질문해 주세요 😊
-
