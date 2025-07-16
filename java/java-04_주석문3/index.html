@@ -1,0 +1,1382 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Markdown 기반의 깔끔한 강의 웹페이지">
+      
+      
+      
+      
+        <link rel="prev" href="../java-04_%EC%A3%BC%EC%84%9D%EB%AC%B82/">
+      
+      
+        <link rel="next" href="../../git/git_01/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Java-04 주석문3 - 백엔드 부트캠프</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-enum" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="백엔드 부트캠프" class="md-header__button md-logo" aria-label="백엔드 부트캠프" data-md-component="logo">
+      
+  <img src="../../images/likelion_kor_logo_renew.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            백엔드 부트캠프
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Java-04 주석문3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/carami/likelion-backend-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="백엔드 부트캠프" class="md-nav__button md-logo" aria-label="백엔드 부트캠프" data-md-component="logo">
+      
+  <img src="../../images/likelion_kor_logo_renew.svg" alt="logo">
+
+    </a>
+    백엔드 부트캠프
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/carami/likelion-backend-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    홈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    교안
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            교안
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java-01_%EC%A4%80%EB%B9%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java-01 준비
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java-02_main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java-02 Main
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java-03_intellj%EC%84%A4%EC%B9%98%EB%B0%8F%EC%8B%A4%ED%96%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java-03 Intellj설치및실행
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java-04_%EC%A3%BC%EC%84%9D%EB%AC%B8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java-04 주석문
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java-04_%EC%A3%BC%EC%84%9D%EB%AC%B82/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java-04 주석문2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Java-04 주석문3
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java-04 주석문3
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 강의 개요
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📖 목차
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 주석문 (Comments)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 주석문 (Comments)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      자바의 주석문 종류
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javadoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Javadoc 주석문과 태그
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      좋은 주석을 작성하는 방법
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Enum (열거 타입)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Enum (열거 타입)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      상수 사용의 문제점
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum 타입 사용하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum 타입의 주요 특징
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum에 생성자, 필드, 메소드 추가하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum-enummap-enumset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum과 유틸리티 클래스 (EnumMap, EnumSet)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum의 고급 활용 (인터페이스, 추상 메소드)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 학습 정리
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 학습 정리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      학습 확인 체크리스트
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      퀴즈로 복습하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      생각해보기 (복습 질문)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/git_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    체크리스트
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            체크리스트
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/week01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ✅ 1주차 체크리스트 – Git &amp; Java 기초
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../checklist/week02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Week02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 강의 개요
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📖 목차
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 주석문 (Comments)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 주석문 (Comments)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      자바의 주석문 종류
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javadoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Javadoc 주석문과 태그
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      좋은 주석을 작성하는 방법
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Enum (열거 타입)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Enum (열거 타입)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      상수 사용의 문제점
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum 타입 사용하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum 타입의 주요 특징
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum에 생성자, 필드, 메소드 추가하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum-enummap-enumset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum과 유틸리티 클래스 (EnumMap, EnumSet)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum의 고급 활용 (인터페이스, 추상 메소드)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 학습 정리
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 학습 정리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      학습 확인 체크리스트
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      퀴즈로 복습하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      생각해보기 (복습 질문)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="4-enum">4강: 자바 주석문과 Enum<a class="headerlink" href="#4-enum" title="Permanent link">&para;</a></h1>
+<ul>
+<li><strong>강사</strong>: 강경미(carami@nate.com)</li>
+</ul>
+<hr />
+<h2 id="_1">📚 강의 개요<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>이번 강의에서는 자바 코드의 가독성과 유지보수성을 높이는 핵심 요소인 <strong>주석문(Comments)</strong>과, 타입에 안전한 상수를 정의하는 <strong>열거 타입(Enum)</strong>에 대해 깊이 있게 학습합니다.</p>
+<ul>
+<li><strong>주제</strong>: 자바 주석문의 종류와 활용법, Javadoc을 이용한 문서화, Enum 타입의 개념과 고급 활용법</li>
+<li><strong>학습 목표</strong>:</li>
+<li>주석문의 세 가지 종류를 구분하고 상황에 맞게 올바르게 사용할 수 있다.</li>
+<li>Javadoc의 개념과 주요 태그를 이해하고, API 문서를 생성할 수 있다.</li>
+<li>기존 <code>final static</code> 상수 방식의 문제점을 이해하고 Enum의 필요성을 설명할 수 있다.</li>
+<li>Enum을 정의하고, 생성자, 필드, 메소드를 추가하여 비즈니스 로직에 활용할 수 있다.</li>
+<li><code>EnumMap</code>, <code>EnumSet</code> 등 Enum 관련 유틸리티 클래스를 사용하여 코드를 효율적으로 작성할 수 있다.</li>
+</ul>
+<hr />
+<h2 id="_2">📖 목차<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-주석문-comments">주석문 (Comments)</a><ul>
+<li><a href="#자바의-주석문-종류">자바의 주석문 종류</a></li>
+<li><a href="#javadoc-주석문과-태그">Javadoc 주석문과 태그</a></li>
+<li><a href="#좋은-주석을-작성하는-방법">좋은 주석을 작성하는 방법</a></li>
+</ul>
+</li>
+<li><a href="#2-enum-열거-타입">Enum (열거 타입)</a><ul>
+<li><a href="#상수-사용의-문제점">상수 사용의 문제점</a></li>
+<li><a href="#enum-타입-사용하기">Enum 타입 사용하기</a></li>
+<li><a href="#enum-타입의-주요-특징">Enum 타입의 주요 특징</a></li>
+<li><a href="#enum에-생성자-필드-메소드-추가하기">Enum에 생성자, 필드, 메소드 추가하기</a></li>
+<li><a href="#enum과-유틸리티-클래스-enummap-enumset">Enum과 유틸리티 클래스 (EnumMap, EnumSet)</a></li>
+<li><a href="#enum의-고급-활용-인터페이스-추상-메소드">Enum의 고급 활용 (인터페이스, 추상 메소드)</a></li>
+</ul>
+</li>
+<li><a href="#-학습-정리">📝 학습 정리</a><ul>
+<li><a href="#학습-확인-체크리스트">학습 확인 체크리스트</a></li>
+<li><a href="#퀴즈로-복습하기">퀴즈로 복습하기</a></li>
+<li><a href="#생각해보기-복습-질문">생각해보기 (복습 질문)</a></li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="1-comments">1. 주석문 (Comments)<a class="headerlink" href="#1-comments" title="Permanent link">&para;</a></h2>
+<p>주석문은 프로그램의 실행에는 영향을 주지 않지만, 코드에 대한 설명을 붙여 가독성을 높이고 다른 개발자와의 협업을 돕는 중요한 요소입니다.</p>
+<h3 id="_3">자바의 주석문 종류<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>자바는 세 가지 형태의 주석을 제공합니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">주석 기호</th>
+<th style="text-align: left;">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>//</code></td>
+<td style="text-align: left;">기호부터 해당 줄의 끝까지 주석으로 처리됩니다. (한 줄 주석)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/* ... */</code></td>
+<td style="text-align: left;"><code>/*</code> 와 <code>*/</code> 사이의 모든 내용을 주석으로 처리합니다. (여러 줄 주석)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/** ... */</code></td>
+<td style="text-align: left;"><code>javadoc</code> 도구를 통해 API 문서로 생성될 수 있는 특별한 주석입니다.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="javadoc">Javadoc 주석문과 태그<a class="headerlink" href="#javadoc" title="Permanent link">&para;</a></h3>
+<p>Javadoc 주석(<code>/** ... */</code>)은 클래스, 메소드, 필드 선언부 바로 위에 작성하여 코드의 명세를 문서화하는 데 사용됩니다. 특정 <code>@</code> 태그를 사용하여 구조적인 정보를 제공할 수 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">태그</th>
+<th style="text-align: left;">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>@author</code></td>
+<td style="text-align: left;">작성자 이름</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>@version</code></td>
+<td style="text-align: left;">클래스나 메소드의 버전 정보</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>@since</code></td>
+<td style="text-align: left;">해당 기능이 추가된 시점 (버전, 날짜 등)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>@param</code></td>
+<td style="text-align: left;">메소드의 매개변수에 대한 설명</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>@return</code></td>
+<td style="text-align: left;">메소드의 반환값에 대한 설명</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>@exception</code></td>
+<td style="text-align: left;">발생할 수 있는 예외(Exception)에 대한 설명</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>@deprecated</code></td>
+<td style="text-align: left;">더 이상 사용되지 않거나, 삭제될 예정임을 알림</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>@see</code></td>
+<td style="text-align: left;">관련 있는 다른 클래스나 메소드, 외부 링크를 참조시킬 때 사용</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>Tip:</strong> IntelliJ와 같은 IDE에서는 <code>shift</code> 키를 두 번 눌러 <code>Generate Javadoc</code>을 실행하면 Javadoc 문서를 쉽게 생성할 수 있습니다.</p>
+<h3 id="_4">좋은 주석을 작성하는 방법<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>코드로 말하기</strong>: 주석이 없어도 이해할 수 있도록 클래스, 메소드, 변수 이름을 명확하게 작성하는 것이 최선입니다.</li>
+<li><strong>Javadoc 적극 활용하기</strong>: 외부에 공개되는 API(Public Class, Method)에는 Javadoc 주석을 충실히 작성하여 사용자에게 정확한 정보를 제공해야 합니다.</li>
+<li><strong>주석은 최소화하기</strong>: 꼭 필요한 정보만 간결하게 작성합니다.</li>
+</ul>
+<hr />
+<h2 id="2-enum">2. Enum (열거 타입)<a class="headerlink" href="#2-enum" title="Permanent link">&para;</a></h2>
+<p><code>Enum</code>(Enumeration)은 서로 연관된 <strong>상수들의 집합</strong>을 정의할 때 사용하는 특별한 데이터 타입입니다. JDK 5부터 도입되었으며, 상수를 훨씬 더 안전하고 의미 있게 사용할 수 있게 해줍니다.</p>
+<h3 id="_5">상수 사용의 문제점<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Enum이 없던 시절에는 <code>public final static int</code> 와 같은 방식으로 상수를 정의했습니다.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// 😥 기존 방식의 문제점</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DayType</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">SUNDAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MONDAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>이 방식은 다음과 같은 <strong>치명적인 단점</strong>이 있습니다.</p>
+<ul>
+<li><strong>타입 안전성(Type-Safety) 부재</strong>: 변수에 정해진 상수 값 외에 다른 어떤 정수 값도 할당될 수 있어 오류 발생 가능성이 높습니다.</li>
+<li><strong>의미 불명확</strong>: <code>today</code> 변수의 값이 <code>0</code>일 때, 이것이 <code>SUNDAY</code>를 의미하는지 코드를 보지 않으면 알기 어렵습니다.</li>
+</ul>
+<h3 id="enum">Enum 타입 사용하기<a class="headerlink" href="#enum" title="Permanent link">&para;</a></h3>
+<p>Enum은 이러한 문제를 완벽하게 해결합니다.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// ✨ Enum을 사용한 개선</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Day</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">SUNDAY</span><span class="p">,</span><span class="w"> </span><span class="n">MONDAY</span><span class="p">,</span><span class="w"> </span><span class="n">TUESDAY</span><span class="p">,</span><span class="w"> </span><span class="n">WEDNESDAY</span><span class="p">,</span><span class="w"> </span><span class="n">THURSDAY</span><span class="p">,</span><span class="w"> </span><span class="n">FRIDAY</span><span class="p">,</span><span class="w"> </span><span class="n">SATURDAY</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>✅ <strong>핵심</strong>: Enum을 사용하면 변수에 할당할 수 있는 값을 특정 상수들로 <strong>강제</strong>할 수 있어 **타입 안전성(Type-Safety)**이 보장됩니다.</p>
+<h3 id="enum_1">Enum 타입의 주요 특징<a class="headerlink" href="#enum_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>switch</code>문과 완벽한 조합</strong>: <code>switch</code>문에서 사용하면 코드가 매우 간결하고 가독성이 높아집니다.</li>
+<li><strong>동등 비교</strong>: Enum 값들은 <code>==</code> 연산자로 비교하는 것이 안전하고 권장됩니다.</li>
+</ul>
+<h3 id="enum_2">Enum에 생성자, 필드, 메소드 추가하기<a class="headerlink" href="#enum_2" title="Permanent link">&para;</a></h3>
+<p>Enum은 단순한 상수의 나열을 넘어, 자체적으로 <strong>생성자, 필드, 메소드</strong>를 가질 수 있는 완전한 객체입니다. Enum의 생성자는 반드시 <code>private</code>이어야 합니다.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Gender</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">MALE</span><span class="p">(</span><span class="s">&quot;XY&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">FEMALE</span><span class="p">(</span><span class="s">&quot;XX&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">chromosome</span><span class="p">;</span><span class="w"> </span><span class="c1">// 염색체 필드</span>
+
+<span class="w">    </span><span class="c1">// Enum 생성자는 반드시 private 이어야 함</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="nf">Gender</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">chromosome</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">chromosome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chromosome</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printChromosome</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;염색체 정보 : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">chromosome</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="enum-enummap-enumset">Enum과 유틸리티 클래스 (EnumMap, EnumSet)<a class="headerlink" href="#enum-enummap-enumset" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>EnumMap</code></strong>: Enum을 키(Key)로 사용하는 특화된 <code>Map</code>입니다. 매우 빠르고 효율적으로 동작합니다.</li>
+<li><strong><code>EnumSet</code></strong>: Enum을 저장하는 특화된 <code>Set</code>입니다. 내부적으로 비트 벡터를 사용하여 메모리 효율이 높고 성능이 뛰어납니다. <code>allOf()</code>나 <code>range()</code> 같은 정적 메소드로 쉽게 생성할 수 있습니다.</li>
+</ul>
+<h3 id="enum_3">Enum의 고급 활용 (인터페이스, 추상 메소드)<a class="headerlink" href="#enum_3" title="Permanent link">&para;</a></h3>
+<p>Enum은 인터페이스를 구현하거나, 내부에 추상 메소드를 선언하여 각 상수마다 다른 동작을 구현하게 할 수도 있습니다.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// 각 상수마다 다른 동작을 하도록 강제하는 방법</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">KOREA</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;대한민국&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="n">JAPAN</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;일본&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="c1">// 추상 메소드 선언</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="_6">📝 학습 정리<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">학습 확인 체크리스트<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] 한 줄 주석(<code>//</code>)과 여러 줄 주석(<code>/* */</code>)의 차이점을 이해했나요?</li>
+<li>[ ] Javadoc 주석(<code>/** */</code>)을 사용하여 클래스와 메소드에 설명을 붙일 수 있나요?</li>
+<li>[ ] <code>@param</code>, <code>@return</code>, <code>@author</code> Javadoc 태그를 올바르게 사용할 수 있나요?</li>
+<li>[ ] <code>final static</code> 상수의 타입 안전성 문제를 설명할 수 있나요?</li>
+<li>[ ] <code>enum</code> 키워드를 사용하여 열거 타입을 정의할 수 있나요?</li>
+<li>[ ] Enum에 private 생성자와 필드를 추가하여 각 상수에 고유한 값을 부여할 수 있나요?</li>
+<li>[ ] <code>EnumMap</code>과 <code>EnumSet</code>의 용도와 장점을 이해했나요?</li>
+</ul>
+<h3 id="_8">퀴즈로 복습하기<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>❓ <strong>Quiz 1.</strong> 다음 중 Javadoc 주석에서 메소드의 매개변수를 설명하는 태그는 무엇인가요?</p>
+<p>\&lt;details&gt;
+\&lt;summary&gt;정답 확인\&lt;/summary&gt;
+\&lt;p&gt;</p>
+<p><strong>정답: <code>@param</code></strong></p>
+<p><code>@param</code> 태그는 메소드가 받는 인자(매개변수)의 이름과 그에 대한 설명을 명시하는 데 사용됩니다.</p>
+<p>\&lt;/p&gt;
+\&lt;/details&gt;</p>
+<hr />
+<p>❓ <strong>Quiz 2.</strong> Enum의 특징으로 <strong>틀린</strong> 것을 고르세요.</p>
+<p>\&lt;details&gt;
+\&lt;summary&gt;정답 확인\&lt;/summary&gt;
+\&lt;p&gt;</p>
+<p><strong>정답: 4번</strong></p>
+<p>Enum의 생성자는 외부에서 호출할 수 없으며, 반드시 <code>private</code> 접근 제어자를 가져야 합니다. (명시적으로 <code>private</code>을 쓰지 않아도 컴파일러가 자동으로 <code>private</code>으로 간주합니다.)</p>
+<p>\&lt;/p&gt;
+\&lt;/details&gt;</p>
+<ol>
+<li>타입에 안전한 상수 집합을 정의할 수 있다.</li>
+<li><code>switch</code> 문에서 사용할 수 있어 가독성이 좋다.</li>
+<li><code>==</code> 연산자로 안전하게 비교할 수 있다.</li>
+<li><code>public</code> 생성자를 가질 수 있다.</li>
+</ol>
+<h3 id="_9">생각해보기 (복습 질문)<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li>"좋은 코드는 주석이 필요 없다"는 말에 대해 어떻게 생각하시나요? 여러분이 생각하는 '좋은 주석'이란 무엇인가요?</li>
+<li>프로젝트에서 요일, 회원 등급(예: BRONZE, SILVER, GOLD), 결제 수단(예: CARD, CASH, BANK_TRANSFER) 등을 관리해야 할 때, <code>String</code> 이나 <code>int</code> 대신 <code>Enum</code>을 사용하면 어떤 구체적인 이점들이 있을까요?</li>
+<li>Enum에 추상 메소드를 선언하고 각 상수에서 구현하는 방식은 <code>switch</code> 문을 사용하는 것과 비교했을 때 어떤 장단점이 있을까요?</li>
+</ol>
+<!-- end list -->
+
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../javascripts/custom.js"></script>
+      
+    
+  </body>
+</html>
